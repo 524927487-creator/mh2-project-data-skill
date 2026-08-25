@@ -1,0 +1,6 @@
+﻿dungeon_type,宏名,含义,来源
+0,DUNGEON_TYPE_NONE,主城,src/include/dungeon.hrl:108
+1,DUNGEON_TYPE_MAIN,主线/小秘境,src/include/dungeon.hrl:110
+2,DUNGEON_TYPE_BIG,大秘境,src/include/dungeon.hrl:111
+3,DUNGEON_TYPE_RESOURCE,资源本,src/include/dungeon.hrl:112
+5,DUNGEON_TYPE_LOOT,组队打宝,src/include/dungeon.hrl:113

@@ -1,0 +1,7 @@
+﻿career,职业,免费解锁,初始武器ID,初始武器,通配说明,口径风险,来源
+0,全职业,,,,配置中的通配值，不是可选职业,,src/conf/conf_skill.hrl:4
+1,战士,1,1000001,剑,,,src/conf/conf_role.erl:37
+2,牧师,1,1000002,权杖,,旧注释冲突：src/include/player_mask.hrl:45 仍写 2=法师；本表以配置字段说明为准,src/conf/conf_role.erl:43
+3,游侠,1,1000003,弓,,,src/conf/conf_role.erl:49
+4,法师,0,0,,,,src/conf/conf_role.erl:55
+5,忍者,0,0,,,,src/conf/conf_role.erl:61

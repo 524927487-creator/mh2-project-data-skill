@@ -1,0 +1,25 @@
+﻿主题,工作表,记录数,主要来源,口径说明
+流水原因,reason_sub_reason,40,include/item.hrl + 调用点,sub_reason 按 reason 解读
+副本类型,dungeon_type,5,include/dungeon.hrl,类型枚举
+副本 ID,dungeon_id,310,4 张玩法关卡生成配置,使用 type:id 作为唯一键
+小秘境绑定解锁,small_dungeon_unlock,31,MHR_小秘境绑定解锁表.xlsx（正式快照）,查询键为 dungeon_type+dungeon_id；行键为 relation_key；未命中为 NO_SOURCE_RELATION
+物品 ID,item_id,2524,conf_item.erl,全量服务端物品
+职业,career,6,conf_role.erl + 配置字段说明,0 为全职业
+技能,skill,86,conf_skill.erl + item 反向关联,名称来自技能物品
+装备,equipment,2422,武器/防具生成配置 + item,合并主武器、副武器、防具
+宠物,pet,1,conf_pet.erl + item,pet_id 与 item_id 一致
+补充常量,constant_lookup,67,item/skill/pet/equip.hrl,类型、品质、槽位等
+,,,,
+,,,,
+口径提醒,,,,
+1,sub_reason,不是全局枚举,需结合 reason 查本表,未传时为 0
+2,dungeon_id,不是全局唯一,必须同时记录 dungeon_type,本表提供 type:id 唯一键
+3,career=2,当前口径为牧师,player_mask.hrl 有旧注释,以配置字段说明为准
+4,装备品质,当前配置使用 1-7 口径,equip.hrl 留有旧 0-4 枚举,不要混用
+,,,,
+,,,,
+数据核对,,,,
+检查项,结果,数量,明细,判断
+物品服务端名称空白,通过,0,全量 conf_item.server_name,应为 0
+装备未关联 item_id,有缺口,1,1200001（副武器）,配置关联缺口
+技能未关联解锁物品,允许存在,65,基础/被动/宠物技能可无解锁物品,允许

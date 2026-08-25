@@ -1,0 +1,49 @@
+{
+  "resource_name": "small_dungeon_unlock",
+  "resource_version": "2026-08-25-v1",
+  "resource_status": "FORMAL",
+  "scope": {
+    "dungeon_type": 1,
+    "domain": "small_dungeon_out_of_instance_binding_unlock_and_tutorial_relations"
+  },
+  "source_snapshot": {
+    "path": "../raw/MHR_小秘境绑定解锁表.xlsx",
+    "sheet": "小秘境绑定解锁表",
+    "range": "A4:H35",
+    "sha256": "FAAE914C81F071B5794FF9D161FEBB436D26F43921FC35024D2A4929694571CE",
+    "source_declared_version": null,
+    "source_version_status": "SOURCE_VERSION_NOT_DECLARED; resource_version and source SHA-256 identify the accepted snapshot"
+  },
+  "export": {
+    "path": "small_dungeon_unlock.csv",
+    "sha256": "DBCEA8A4DA3FD8A67EF80AF2A03D4AFC0DF19FC21082986A47E4CFB942771567",
+    "record_count": 31,
+    "dungeon_count": 22,
+    "verification_status": "SOURCE_RECORDED"
+  },
+  "keys": {
+    "row_unique_key": "relation_key",
+    "row_unique_key_format": "1:<dungeon_id>:R<source_row_number>",
+    "lookup_key": ["dungeon_type", "dungeon_id"],
+    "lookup_cardinality": "0..N; do not collapse multiple source relations",
+    "source_join_field": "original workbook dungeonid"
+  },
+  "fields": {
+    "display": ["类别", "解锁内容"],
+    "required_context": ["实际条件", "状态", "说明", "配置证据"]
+  },
+  "unmatched_rules": {
+    "within_scope": "For dungeon_type=1, no row matching the full lookup key returns NO_SOURCE_RELATION with an empty relation list.",
+    "out_of_scope": "For dungeon_type other than 1, return OUT_OF_SCOPE; do not query this resource as a generic dungeon-unlock table.",
+    "prohibitions": [
+      "Do not infer a relation from adjacent dungeon IDs, chapter order, or dungeon_id.csv.",
+      "Do not render a missing relation as a confirmed unlock.",
+      "Do not reduce conditional or conflicting source rows to a pass-the-level unlock conclusion."
+    ]
+  },
+  "validation": {
+    "source_export_row_count": 31,
+    "source_export_content_mismatch_count": 0,
+    "source_dungeonid_level_text_mismatch_count": 0
+  }
+}

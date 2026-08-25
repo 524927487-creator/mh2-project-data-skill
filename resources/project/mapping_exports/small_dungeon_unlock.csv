@@ -1,0 +1,32 @@
+﻿relation_key,dungeon_type,dungeon_id,关卡,类别,解锁内容,实际条件,状态,说明,配置证据,source,verification_status
+1:10101:R5,1,10101,1-1,技能,战技1,关内一次性特殊奖励事件拾取,已配置,按职业发放战技1解锁道具。,dungeon_inners_event_reward：level_id=10101,MHR_小秘境绑定解锁表.xlsx|小秘境绑定解锁表|A4:H35,SOURCE_RECORDED
+1:10102:R6,1,10102,1-2,技能,战技2,关内一次性特殊奖励事件拾取,已配置,按职业发放战技2解锁道具。,dungeon_inners_event_reward：level_id=10102,MHR_小秘境绑定解锁表.xlsx|小秘境绑定解锁表|A4:H35,SOURCE_RECORDED
+1:10104:R7,1,10104,1-4,系统,技能系统主入口,通关指定小秘境 1-4,已配置,入口开放；单个技能和槽位仍按自身规则。,menu.id=2 -> unlock.id=1102,MHR_小秘境绑定解锁表.xlsx|小秘境绑定解锁表|A4:H35,SOURCE_RECORDED
+1:10104:R8,1,10104,1-4,魂珠教学,战技1魂珠1装配教学,首次通关后，技能等级达到3级并装配,设计契约,关卡负责触发教学，不等于仅通关即可装配。,寻路式引导契约：1-4,MHR_小秘境绑定解锁表.xlsx|小秘境绑定解锁表|A4:H35,SOURCE_RECORDED
+1:10107:R9,1,10107,1-7,魂珠教学,战技2魂珠1装配教学,首次通关后，技能等级达到5级并装配,设计契约,旧开放表写1-8；当前契约为1-7。,寻路式引导契约：1-7,MHR_小秘境绑定解锁表.xlsx|小秘境绑定解锁表|A4:H35,SOURCE_RECORDED
+1:10109:R10,1,10109,1-9,技能,战技3本体,关内一次性特殊奖励事件拾取,已配置,按职业发放战技3解锁道具。,dungeon_inners_event_reward：level_id=10109,MHR_小秘境绑定解锁表.xlsx|小秘境绑定解锁表|A4:H35,SOURCE_RECORDED
+1:10110:R11,1,10110,1-10,系统,冒险大厅,通关指定小秘境 1-10,已配置,玩法聚合入口开放。,menu.id=15 -> unlock.id=1115,MHR_小秘境绑定解锁表.xlsx|小秘境绑定解锁表|A4:H35,SOURCE_RECORDED
+1:10110:R12,1,10110,1-10,玩法,大秘境入口,通关指定小秘境 1-10,已配置,与冒险大厅同步开放。,gameplay_entry.id=1 -> unlock.id=1201,MHR_小秘境绑定解锁表.xlsx|小秘境绑定解锁表|A4:H35,SOURCE_RECORDED
+1:10112:R13,1,10112,1-12,系统,铁匠铺,通关指定小秘境 1-12,已配置,强化相关入口开放。,menu.id=3 -> unlock.id=1103,MHR_小秘境绑定解锁表.xlsx|小秘境绑定解锁表|A4:H35,SOURCE_RECORDED
+1:10112:R14,1,10112,1-12,系统,武器召唤,通关指定小秘境 1-12,已配置,武器抽卡入口开放。,menu.id=8 -> unlock.id=1108,MHR_小秘境绑定解锁表.xlsx|小秘境绑定解锁表|A4:H35,SOURCE_RECORDED
+1:10115:R15,1,10115,1-15,系统,挂机探险,通关指定小秘境 1-15,已配置,挂机入口开放。,menu.id=5 -> unlock.id=1105,MHR_小秘境绑定解锁表.xlsx|小秘境绑定解锁表|A4:H35,SOURCE_RECORDED
+1:10115:R16,1,10115,1-15,系统,商店,通关指定小秘境 1-15,已配置,与挂机共用同一开放条件。,menu.id=6 -> unlock.id=1105,MHR_小秘境绑定解锁表.xlsx|小秘境绑定解锁表|A4:H35,SOURCE_RECORDED
+1:10115:R17,1,10115,1-15,活动,新手签到,通关指定小秘境 1-15,已配置,开启当天计第1个有效登录日。,menu.id=16 -> unlock.id=1001,MHR_小秘境绑定解锁表.xlsx|小秘境绑定解锁表|A4:H35,SOURCE_RECORDED
+1:10115:R18,1,10115,1-15,场景,第二阶段主城（沙漠营地）,通关指定小秘境 1-15,已配置,首次满足条件后切换主城。,homeland_scene_switch.id=2 -> unlock.id=1001,MHR_小秘境绑定解锁表.xlsx|小秘境绑定解锁表|A4:H35,SOURCE_RECORDED
+1:10115:R19,1,10115,1-15,章节,小秘境第二章,通关指定小秘境 1-15,已配置,第二章关卡列表开放。,dungeon_inners_chapter.chapter_id=2 -> unlock.id=1001,MHR_小秘境绑定解锁表.xlsx|小秘境绑定解锁表|A4:H35,SOURCE_RECORDED
+1:10201:R20,1,10201,2-1,系统,宠物,通关指定小秘境 2-1,已配置,当前生产配置；早于旧开放表的2-4。,menu.id=10 -> unlock.id=1110,MHR_小秘境绑定解锁表.xlsx|小秘境绑定解锁表|A4:H35,SOURCE_RECORDED
+1:10202:R21,1,10202,2-2,玩法,资源秘境入口,通关指定小秘境 2-2,已配置,资源玩法总入口开放。,gameplay_entry.id=3 -> unlock.id=1203,MHR_小秘境绑定解锁表.xlsx|小秘境绑定解锁表|A4:H35,SOURCE_RECORDED
+1:10202:R22,1,10202,2-2,玩法,技能试炼难度1,通关指定小秘境 2-2,已配置,资源本类型与第1层同时开放。,resource_dungeon_type.type=4 / level.id=34001,MHR_小秘境绑定解锁表.xlsx|小秘境绑定解锁表|A4:H35,SOURCE_RECORDED
+1:10205:R23,1,10205,2-5,玩法,装备秘境入口（普通）,通关指定小秘境 2-5,已配置,生产表标注为设计侧联调示例，运行消费表仍需程序确认。,gameplay_entry.id=2 / team_loot_chapter.chapter_id=1,MHR_小秘境绑定解锁表.xlsx|小秘境绑定解锁表|A4:H35,SOURCE_RECORDED
+1:10207:R24,1,10207,2-7,技能,被动领悟·一式,一星首通自动发放道具,已配置,解锁当前职业第一套BD的第1个被动。,dungeon_inners_reward.id=10207 / first_reward_1_star,MHR_小秘境绑定解锁表.xlsx|小秘境绑定解锁表|A4:H35,SOURCE_RECORDED
+1:10210:R25,1,10210,2-10,玩法,铸刃试炼难度1,通关指定小秘境 2-10,已配置,武器资源本类型入口与第1层开放。,resource_dungeon_type.type=2 / level.id=32001,MHR_小秘境绑定解锁表.xlsx|小秘境绑定解锁表|A4:H35,SOURCE_RECORDED
+1:10210:R26,1,10210,2-10,玩法,铸甲试炼难度1,通关指定小秘境 2-10,已配置,防具资源本类型入口与第1层开放。,resource_dungeon_type.type=3 / level.id=33001,MHR_小秘境绑定解锁表.xlsx|小秘境绑定解锁表|A4:H35,SOURCE_RECORDED
+1:10211:R27,1,10211,2-11,魂珠,核心魂珠·对群,一星首通发放本体；技能等级10解锁孔位,组合条件,本体与核心魂珠孔位分别校验。,dungeon_inners_reward.id=10211 + skill_slot.slot_id=7,MHR_小秘境绑定解锁表.xlsx|小秘境绑定解锁表|A4:H35,SOURCE_RECORDED
+1:10213:R28,1,10213,2-13,技能,被动领悟·二式,一星首通自动发放道具,已配置,解锁当前职业第一套BD的第2个被动。,dungeon_inners_reward.id=10213 / first_reward_1_star,MHR_小秘境绑定解锁表.xlsx|小秘境绑定解锁表|A4:H35,SOURCE_RECORDED
+1:10214:R29,1,10214,2-14,玩法,装备秘境困难,"战力达到28,000；解锁提示引用2-14",条件冲突,当前玩法配置为战力门槛，不能简写成通关即开。,team_loot_level.id=10102 -> unlock.id=1502,MHR_小秘境绑定解锁表.xlsx|小秘境绑定解锁表|A4:H35,SOURCE_RECORDED
+1:10215:R30,1,10215,2-15,玩法,技能试炼难度2,通关2-15，且技能等级达到21,组合条件,资源本层表同时存在关卡字段与技能等级门槛。,resource_dungeon_level.id=34002 -> unlock.id=1442,MHR_小秘境绑定解锁表.xlsx|小秘境绑定解锁表|A4:H35,SOURCE_RECORDED
+1:10216:R31,1,10216,2-16,魂珠,战技魂珠·二式,一星首通自动发放道具,已配置,按当前职业解锁对应战技魂珠。,dungeon_inners_reward.id=10216 / first_reward_1_star,MHR_小秘境绑定解锁表.xlsx|小秘境绑定解锁表|A4:H35,SOURCE_RECORDED
+1:10217:R32,1,10217,2-17,玩法,淘金试炼难度1,通关指定小秘境 2-17,已配置,金币资源本类型入口与第1层开放。,resource_dungeon_type.type=1 / level.id=31001,MHR_小秘境绑定解锁表.xlsx|小秘境绑定解锁表|A4:H35,SOURCE_RECORDED
+1:10230:R33,1,10230,2-30,章节,小秘境第三章,通关指定小秘境 2-30,已配置,第三章关卡列表开放。,dungeon_inners_chapter.chapter_id=3 -> unlock.id=1002,MHR_小秘境绑定解锁表.xlsx|小秘境绑定解锁表|A4:H35,SOURCE_RECORDED
+1:10330:R34,1,10330,3-30,章节,小秘境第四章,通关指定小秘境 3-30,已配置,第四章关卡列表开放。,dungeon_inners_chapter.chapter_id=4 -> unlock.id=1003,MHR_小秘境绑定解锁表.xlsx|小秘境绑定解锁表|A4:H35,SOURCE_RECORDED
+1:10430:R35,1,10430,4-30,章节,小秘境第五章,通关指定小秘境 4-30,已配置,第五章关卡列表开放。,dungeon_inners_chapter.chapter_id=5 -> unlock.id=1004,MHR_小秘境绑定解锁表.xlsx|小秘境绑定解锁表|A4:H35,SOURCE_RECORDED

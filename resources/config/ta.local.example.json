@@ -1,0 +1,6 @@
+{
+  "apiUrl": "https://YOUR_THINKINGDATA_API_HOST",
+  "userToken": "TA_USER_TOKEN",
+  "outputDir": "output",
+  "outputPrefix": "shanhai"
+}

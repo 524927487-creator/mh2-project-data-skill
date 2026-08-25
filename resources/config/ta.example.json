@@ -1,0 +1,6 @@
+{
+  "apiUrl": "http://175.178.115.119:8992",
+  "userToken": "用户TOKEN",
+  "outputDir": "output",
+  "outputPrefix": "query-result"
+}

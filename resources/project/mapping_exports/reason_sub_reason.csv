@@ -1,0 +1,41 @@
+﻿方向,reason,宏名,含义,sub_reason 含义,示例值,reason 来源,sub_reason 依据
+产出,1,ADD_REASON_GM,GM 操作,0（调用未传，默认值）,0,src/include/item.hrl:140,src/item/bag_mod.erl:57
+产出,2,ADD_REASON_RECHARGE,充值,充值订单 ID（OrderID）,订单号,src/include/item.hrl:141,src/mod/recharge_mod.erl:192
+产出,3,ADD_REASON_DUNGEON_TREASURE,副本宝箱,0（调用未传，默认值）,0,src/include/item.hrl:142,src/item/bag_mod.erl:57
+产出,4,ADD_REASON_SURVEY_REWARD,问卷调查奖励,0（调用未传，默认值）,0,src/include/item.hrl:143,src/item/bag_mod.erl:57
+产出,5,ADD_REASON_GIFT_OPEN,礼包打开,礼包物品 ID；自选礼包沿用传入的 SubReason,ItemID,src/include/item.hrl:144,src/item/bag_mod.erl:173
+产出,6,ADD_REASON_ARMOR_DECOMPOSE,手动暗金分解,0（调用未传，默认值）,0,src/include/item.hrl:145,src/item/bag_mod.erl:57
+产出,7,ADD_REASON_TASK,任务奖励,任务 ID（TaskId）,TaskId,src/include/item.hrl:146,src/task/task_mod.erl:289
+产出,8,ADD_REASON_LOTTERY,抽卡,武器抽卡入口 ID（EntryId）,EntryId,src/include/item.hrl:147,src/mod/weapon_lottery_mod.erl:172
+产出,9,ADD_REASON_AFK_REWARD,挂机收益领取,0（调用未传，默认值）,0,src/include/item.hrl:148,src/item/bag_mod.erl:57
+产出,10,ADD_REASON_INNERS_PASS,小秘境通关奖励,0（调用未传，默认值）,0,src/include/item.hrl:149,src/item/bag_mod.erl:57
+产出,11,ADD_REASON_INNERS_KILL,小秘境击杀怪物掉落,0（调用未传，默认值）,0,src/include/item.hrl:150,src/item/bag_mod.erl:57
+产出,12,ADD_REASON_INNERS_PICKUP,小秘境地面掉落拾取,0（调用未传，默认值）,0,src/include/item.hrl:151,src/item/bag_mod.erl:57
+产出,13,ADD_REASON_INNERS_EVENT,小秘境事件奖励,0（调用未传，默认值）,0,src/include/item.hrl:152,src/item/bag_mod.erl:57
+产出,14,ADD_REASON_INNERS_CHEST,小秘境宝箱/木箱奖励,0（调用未传，默认值）,0,src/include/item.hrl:153,src/item/bag_mod.erl:57
+产出,15,ADD_REASON_INNERS_MERCHANT,小秘境暗金商人购买,0（调用未传，默认值）,0,src/include/item.hrl:154,src/item/bag_mod.erl:57
+产出,16,ADD_REASON_TEAM_LOOT_REWARD,组队打宝结算领奖,0（调用未传，默认值）,0,src/include/item.hrl:155,src/item/bag_mod.erl:57
+产出,17,ADD_REASON_GREAT_RIFT_FIRST_PASS,大秘境首通奖励,0（调用未传，默认值）,0,src/include/item.hrl:156,src/item/bag_mod.erl:57
+产出,18,ADD_REASON_GREAT_RIFT_PERSONAL_REWARD,大秘境个人通关奖励,0（调用未传，默认值）,0,src/include/item.hrl:157,src/item/bag_mod.erl:57
+产出,19,ADD_REASON_GREAT_RIFT_SERVER_REWARD,大秘境全服首通奖励,0（调用未传，默认值）,0,src/include/item.hrl:158,src/item/bag_mod.erl:57
+产出,20,ADD_REASON_MAIL,邮件附件领取,邮件记录中的 reason，用于追溯邮件业务来源,Mail.reason,src/include/item.hrl:159,src/mod/mail_mod.erl:322
+产出,21,ADD_REASON_DUNGEON_RESOURCE_CHALLENGE,资源副本手动挑战奖励,0（调用未传，默认值）,0,src/include/item.hrl:160,src/item/bag_mod.erl:57
+产出,22,ADD_REASON_DUNGEON_RESOURCE_SWEEP,资源副本扫荡,资源本关卡 ID（LevelId）,LevelId,src/include/item.hrl:161,src/dungeon_mod/dungeon_resource_mod.erl:146
+产出,23,ADD_REASON_STORE_BUY,商城购买,商城商品 ID（ID）,StoreId,src/include/item.hrl:162,src/mod/store_mod.erl:62
+产出,24,ADD_REASON_ARMOR_RESOURCE_REWARD,防具共鸣等级奖励,0（调用未传，默认值）,0,src/include/item.hrl:163,src/item/bag_mod.erl:57
+产出,25,ADD_REASON_GUILD_CREATE_REFUND,创建公会失败退还,0（调用未传，默认值）,0,src/include/item.hrl:164,src/item/bag_mod.erl:57
+产出,26,ADD_REASON_ARMOR_AUTO_DECOMPOSE,自动暗金分解,0（调用未传，默认值）,0,src/include/item.hrl:165,src/item/bag_mod.erl:57
+产出,27,ADD_REASON_NEWBIE_SIGNIN,新手签到奖励,登录天数（LoginDay）,LoginDay,src/include/item.hrl:166,src/mod/player_mod.erl:493
+消耗,10000,COST_REASON_GM,GM 操作,0（调用未传，默认值）,0,src/include/item.hrl:169,src/item/bag_mod.erl:57
+消耗,10001,COST_REASON_SKILL_UPGRADE,技能升级,0（调用未传，默认值）,0,src/include/item.hrl:170,src/item/bag_mod.erl:57
+消耗,10002,COST_REASON_CHANGE_NAME,改名,0（调用未传，默认值）,0,src/include/item.hrl:171,src/item/bag_mod.erl:57
+消耗,10003,COST_REASON_LOTTERY,抽卡,武器抽卡入口 ID（EntryId）,EntryId,src/include/item.hrl:172,src/mod/weapon_lottery_mod.erl:170
+消耗,10004,COST_REASON_GIFT_OPEN,礼包打开,0（调用未传，默认值）,0,src/include/item.hrl:173,src/item/bag_mod.erl:57
+消耗,10005,COST_REASON_STORE_BUY,商城购买,商城商品 ID（ID）,StoreId,src/include/item.hrl:174,src/mod/store_mod.erl:60
+消耗,10006,COST_REASON_INNERS_MERCHANT,小秘境暗金商人购买,0（调用未传，默认值）,0,src/include/item.hrl:175,src/item/bag_mod.erl:57
+消耗,10007,COST_REASON_EQUIP_SLOT_UPGRADE,装备槽位等级升级,0（调用未传，默认值）,0,src/include/item.hrl:176,src/item/bag_mod.erl:57
+消耗,10008,COST_REASON_WEAPON_STAR_UPGRADE,主武器升星,0（调用未传，默认值）,0,src/include/item.hrl:177,src/item/bag_mod.erl:57
+消耗,10009,COST_REASON_DUNGEON_RESOURCE_BUY_COUNT,资源副本购买挑战次数,资源本类型（Type）,ResourceType,src/include/item.hrl:178,src/dungeon_mod/dungeon_resource_mod.erl:134
+消耗,10010,COST_REASON_GUILD_CREATE,创建公会,0（调用未传，默认值）,0,src/include/item.hrl:179,src/item/bag_mod.erl:57
+消耗,10011,COST_REASON_ARMOR_DECOMPOSE,手动暗金分解,0（调用未传，默认值）,0,src/include/item.hrl:180,src/item/bag_mod.erl:57
+消耗,10012,COST_REASON_ARMOR_AUTO_DECOMPOSE,自动暗金分解,0（调用未传，默认值）,0,src/include/item.hrl:181,src/item/bag_mod.erl:57

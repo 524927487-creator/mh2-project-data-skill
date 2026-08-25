@@ -1,0 +1,4 @@
+__pycache__/
+*.py[cod]
+resources/config/ta.local.json
+resources/config/*.local.json

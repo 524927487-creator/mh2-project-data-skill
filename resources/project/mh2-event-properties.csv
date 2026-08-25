@@ -1,0 +1,157 @@
+﻿event_name,property_name,property_display,property_type,property_desc
+account_login,first_login,首次登录,数值,1-首次 0-非首次
+armor_decompose,decompose_items,分解装备,对象组,本次一键分解的装备集合，每件装备传一组
+armor_decompose,decompose_items.id,装备配置 id,数值,待分解装备配置 id
+armor_decompose,decompose_items.key,装备唯一 key,文本,待分解装备实例唯一 key
+armor_decompose,return_items,返还道具,对象组,对象组；对象组内字段以 return_items.字段名 上传
+armor_decompose,return_items.id,返还道具id,数值,分解返还道具配置id
+armor_decompose,return_items.num,返还道具数量,数值,返还数量
+armor_equip,item_id,道具id,数值,打开页签时报0
+armor_equip,item_key,道具唯一key,文本,装备/武器实例唯一key
+armor_equip,item_quality,道具品质,数值,品质/稀有度
+armor_equip,pos,部位,数值,装备部位
+career_preview,career_id,当次选择职业,数值,
+chest_open,cost_id,消耗id,数值,消耗道具配置id
+chest_open,cost_num,消耗数量,数值,消耗数量
+chest_open,lottery_type,抽数类型,数值,1-单抽 10-十抽
+chest_open,pool_id,奖池id,数值,宝箱/祈愿池id
+chest_open,reward,获得奖励,对象组,对象组；对象组内字段以 reward.字段名 上传
+chest_open,reward.id,奖励ID,数值,获得道具配置id
+chest_open,reward.num,奖励数量,数值,获得数量
+dungeon,boss_duration,boss用时,数值,
+dungeon,chest_open_num,开启宝箱数量,数值,本局开启副本宝箱数量 小秘境才需要 3506协议
+dungeon,damage_amount,造成伤害,数值,本局造成伤害
+dungeon,death_count,死亡次数,数值,本局死亡次数
+dungeon,dungeon_id,副本id,数值,副本配置id（关卡id）
+dungeon,dungeon_key,副本唯一key,文本,本次副本唯一标识 考虑 pkey + 时间戳 拼接 同时推送客户端 用于副本打点
+dungeon,dungeon_result,副本结果,数值,1-成功 0-战败 2-正常点击退出、主动换场景 3-异常退出（掉线/杀客户端导致玩家进程退出，或副本进程异常退出）
+dungeon,dungeon_star,副本星数,数值,没有的上报0 目前小秘境才有
+dungeon,dungeon_type,副本类型,数值,1-主线 2-大秘境 3-素材秘境 5-装备秘境
+dungeon,robot_num,机器人数量,数值,本局游戏机器人数量，组队打宝才有
+dungeon,scene_num,到达场景数,数值,本局到达第几个场景 建议副本finish协议里面的 dungeon_finish_stat加新字段用于打点告知服务器
+dungeon,use_time,通关用时,数值,单位秒
+dungeon_end,boss_duration,boss用时,数值,
+dungeon_end,death_count,死亡次数,数值,本局死亡次数
+dungeon_end,dungeon_damage,副本伤害,数值,
+dungeon_end,dungeon_id,副本id,数值,副本配置id（关卡id）
+dungeon_end,dungeon_key,副本唯一key,文本,本次副本唯一标识 考虑 pkey + 时间戳 拼接 同时推送客户端 用于副本打点
+dungeon_end,dungeon_level,副本等级,数值,关卡/层数/难度等级
+dungeon_end,dungeon_result,副本结果,数值,1-成功 0-失败 2-中途退出（多人未结算 就离开/单人客户端未发finish 就离开 就算） 3直接杀客户端进程退出 等等 建议副本finish协议里面的 dungeon_finish_stat加新字段用于打点
+dungeon_end,dungeon_star,副本星数,数值,没有的上报0 目前小秘境才有
+dungeon_end,dungeon_type,副本类型,数值,1-主线 2-大秘境 3-素材秘境 5-装备秘境
+dungeon_end,scene_num,到达场景数,数值,本局到达第几个场景 建议副本finish协议里面的 dungeon_finish_stat加新字段用于打点告知服务器
+dungeon_end,total_time,副本停留时长,数值,
+dungeon_end,use_time,通关用时,数值,单位秒
+dungeon_end_choose,choose,玩家选择,数值,返回城镇、下一关、再次挑战
+dungeon_end_choose,dungeon_id,副本id,数值,副本配置id（关卡id）
+dungeon_end_choose,dungeon_key,副本唯一key,文本,本次副本唯一标识 考虑 pkey + 时间戳 拼接 同时推送客户端 用于副本打点
+dungeon_end_choose,dungeon_type,副本类型,数值,1-主线 2-大秘境 3-素材秘境 5-装备秘境
+dungeon_enter,current_equip_id,当前装备id组,列表,
+dungeon_enter,current_pet_id,当前宠物id,列表,三个位置按顺序报，没有上阵的位置报0
+dungeon_enter,current_skillid,当前技能ID,列表,
+dungeon_enter,current_weapon_id,当前武器ID,列表,
+dungeon_enter,current_weapon_level,当前武器等级,列表,
+dungeon_enter,dungeon_id,副本id,数值,副本配置id（关卡id）
+dungeon_enter,dungeon_key,副本唯一key,文本,本次副本唯一标识 考虑 pkey + 时间戳 拼接 同时推送客户端 用于副本打点
+dungeon_enter,dungeon_level,副本等级,数值,关卡/层数/难度等级
+dungeon_enter,dungeon_type,副本类型,数值,1-主线 2-大秘境 3-素材秘境 5-装备秘境
+equip_pos_levelup,after_level,变化后等级,数值,操作后等级
+equip_pos_levelup,before_level,变化前等级,数值,操作前等级
+equip_pos_levelup,cost_items,消耗道具,对象组,对象组；对象组内字段以 cost_items.字段名 上传
+equip_pos_levelup,cost_items.id,消耗道具id,数值,消耗道具配置id
+equip_pos_levelup,cost_items.num,消耗道具数量,数值,消耗数量
+equip_pos_levelup,pos,部位,数值,装备部位
+guide_finish,guide_id,引导id,数值,
+guide_finish,is_record,是否记录,布尔,
+guide_start,guide_id,引导id,数值,
+idle_reward,idle_time,挂机时长,数值,单位秒
+idle_reward,idle_type,挂机类型,数值,1-在线挂机
+idle_reward,reward,获得奖励,对象组,对象组；对象组内字段以 reward.字段名 上传
+idle_reward,reward.id,奖励ID,数值,获得道具配置id
+idle_reward,reward.num,奖励数量,数值,获得数量
+item_flow,after_num,变动后数量,数值,
+item_flow,before_num,变化前的量,数值,
+item_flow,change_num,变动数量,数值,报正数
+item_flow,change_type,变动的类型,数值,1-获得 0消耗
+item_flow,item_id,道具id,数值,打开页签时报0
+item_flow,reason,变动原因,数值,
+item_flow,sub_reason,变动子原因,数值,服务器自己发挥
+logout,online_time,本次在线时长,数值,单位秒
+mail_flow,get_items,获得道具信息,对象组,邮件领取内容
+mail_flow,get_items.id,获得道具id,数值,获得道具配置id
+mail_flow,get_items.num,获得道具数量,数值,获得数量
+mail_flow,mail_id,邮件id,数值,
+mail_flow,mail_key,邮件key,数值,邮件唯一标识
+mail_flow,mail_status,邮件状态,数值,区分发送、已读未领取、已读领取
+pet_fight,pet_level,上阵宠物等级,列表,
+pet_fight,pet_list,上阵宠物列表,列表,没有上阵的位置报0
+prop_flow,change_num,变动数量,数值,报正数
+prop_flow,change_type,变动的类型,数值,1-获得 0消耗
+prop_flow,item_detail,道具详细信息,文本,例如魂卡、装备、咒文石等有属性信息的道具上报，上报格式可参考prop_flow的item_detail字段
+prop_flow,item_id,道具id,数值,打开页签时报0
+prop_flow,item_key,道具唯一key,文本,装备/武器实例唯一key
+prop_flow,item_lv,道具等级,数值,
+prop_flow,quality,品质,数值,
+prop_flow,reason,变动原因,数值,
+prop_flow,star,星级,数值,
+prop_flow,sub_reason,变动子原因,数值,服务器自己发挥
+rank,name,玩家名字,文本,
+rank,rank,排名,数值,
+rank,rank_key,排名key,文本,
+rank,rank_type,排行榜类型,数值,
+rank,reason,变动原因,数值,
+rank,score,分数,数值,
+rank,time,上榜时间,时间,
+role_levelup,after_exp,升级后经验值,数值,
+role_levelup,after_level,变化后等级,数值,操作后等级
+role_levelup,before_exp,升级前经验值,数值,
+role_levelup,before_level,变化前等级,数值,操作前等级
+shop_buy,cost_id,消耗id,数值,消耗道具配置id
+shop_buy,cost_num,消耗数量,数值,消耗数量
+shop_buy,get_items,获得道具信息,对象组,邮件领取内容
+shop_buy,get_items.id,获得道具id,数值,获得道具配置id
+shop_buy,get_items.num,获得道具数量,数值,获得数量
+shop_buy,goods_id,商品id,数值,商店商品配置id
+shop_buy,goods_num,商品数量,数值,购买数量
+shop_buy,shop_id,商店id,数值,来源系统/来源玩法
+shop_view,item_id,道具id,数值,打开页签时报0
+shop_view,shop_id,商店id,数值,来源系统/来源玩法
+shop_view,tab_id,页签id,数值,
+shop_view,type,商店打开类型,数值,1-打开页签 2-打开物品详情
+skill_equip,skill_id,技能id,数值,技能配置id
+skill_equip,skill_level,技能等级,数值,技能等级
+skill_equip,skill_name,技能名称,文本,技能名称
+skill_equip,slot,槽位,数值,战技技能、核心技能、战技2技能、战技魂珠、核心魂珠、战技2魂珠、被动1/2/3技能
+skill_levelup,after_lv,变化后值,数值,变化后等级/星级/数值
+skill_levelup,before_lv,变化前值,数值,变化前等级/星级/数值
+skill_levelup,cost_items,消耗道具,对象组,对象组；对象组内字段以 cost_items.字段名 上传
+skill_levelup,cost_items.id,消耗道具id,数值,消耗道具配置id
+skill_levelup,cost_items.num,消耗道具数量,数值,消耗数量
+task_completed,reward,获得奖励,对象组,对象组；对象组内字段以 reward.字段名 上传
+task_completed,reward.id,奖励ID,数值,获得道具配置id
+task_completed,reward.num,奖励数量,数值,获得数量
+task_completed,task_id,任务id,文本,任务配置id
+task_completed,task_status,任务状态,数值,1-完成 2-领奖
+task_completed,task_type,任务类型,数值,task表的type字段
+user_snapshot,armor_resonance_level,防具共鸣等级,数值,
+user_snapshot,current_skillid,当前技能ID,列表,
+user_snapshot,equips,当前穿戴装备,对象组,报武器、防具
+user_snapshot,equips.id,穿戴装备d,数值,
+user_snapshot,equips.key,穿戴装备唯一key,数值,
+user_snapshot,equips.level,穿戴装备等级,数值,
+user_snapshot,equips.pos,穿戴装备位置,数值,
+user_snapshot,equips.star,穿戴装备星级,数值,防具报0
+user_snapshot,pets,穿戴宠物,对象组,
+user_snapshot,pets.id,宠物id,数值,
+user_snapshot,pets.level,宠物等级,数值,
+user_snapshot,skill_resonance_level,技能共鸣等级,数值,
+weapon_equip,item_id,道具id,数值,打开页签时报0
+weapon_equip,item_key,道具唯一key,文本,装备/武器实例唯一key
+weapon_equip,item_quality,道具品质,数值,品质/稀有度
+weapon_equip,pos,部位,数值,装备部位
+weapon_starup,after_star,变化后星级,数值,操作后星级
+weapon_starup,before_star,变化前星级,数值,操作前星级
+weapon_starup,cost_items,消耗道具,对象组,对象组；对象组内字段以 cost_items.字段名 上传
+weapon_starup,cost_items.id,消耗道具id,数值,消耗道具配置id
+weapon_starup,cost_items.num,消耗道具数量,数值,消耗数量
+weapon_starup,item_id,道具id,数值,打开页签时报0

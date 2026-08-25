@@ -1,0 +1,68 @@
+﻿分类,值,宏名,含义,来源
+背包类型,1,WEAPON_BAG,,src/include/item.hrl:63
+背包类型,2,SUB_WEAPON_BAG,,src/include/item.hrl:64
+背包类型,3,ARMOR_BAG,,src/include/item.hrl:65
+宠物槽位,0,PET_SLOT_EMPTY,槽位未上阵宠物,src/include/pet.hrl:13
+宠物槽位,1,PET_SLOT_MAIN,主战槽位,src/include/pet.hrl:10
+宠物槽位,2,PET_SLOT_ASSIST_ONE,协战槽位 1,src/include/pet.hrl:11
+宠物槽位,3,PET_SLOT_ASSIST_TWO,协战槽位 2,src/include/pet.hrl:12
+货币,1,CURRENCY_GOLD,金币,src/include/item.hrl:85
+货币,2,CURRENCY_DIAMOND,蓝钻,src/include/item.hrl:86
+货币,3,CURRENCY_RMB,粉钻,src/include/item.hrl:87
+货币,184,CURRENCY_MAGIC_ID,纯质魔力,src/include/item.hrl:88
+技能槽位,1,SKILL_SLOT_CORE,核心驱动槽（1个）,src/include/skill.hrl:21
+技能槽位,2,SKILL_SLOT_COMBAT1,战技术式槽1,src/include/skill.hrl:22
+技能槽位,3,SKILL_SLOT_COMBAT2,战技术式槽2,src/include/skill.hrl:23
+技能槽位,4,SKILL_SLOT_PASSIVE1,被动模块槽1,src/include/skill.hrl:24
+技能槽位,5,SKILL_SLOT_PASSIVE2,被动模块槽2,src/include/skill.hrl:25
+技能槽位,6,SKILL_SLOT_PASSIVE3,被动模块槽3,src/include/skill.hrl:26
+技能槽位,7,SKILL_SLOT_CORE_SOUL,核心魂珠槽,src/include/skill.hrl:27
+技能槽位,8,SKILL_SLOT_COMBAT_SOUL1,战技魂珠槽1,src/include/skill.hrl:28
+技能槽位,9,SKILL_SLOT_COMBAT_SOUL2,战技魂珠槽2,src/include/skill.hrl:29
+技能类型,1,SKILL_TYPE_CORE,核心驱动,src/include/skill.hrl:12
+技能类型,2,SKILL_TYPE_COMBAT,战技术式,src/include/skill.hrl:13
+技能类型,3,SKILL_TYPE_PASSIVE,被动模块,src/include/skill.hrl:14
+技能类型,4,SKILL_TYPE_CORE_SOUL,核心魂珠,src/include/skill.hrl:15
+技能类型,5,SKILL_TYPE_COMBAT_SOUL,战技魂珠,src/include/skill.hrl:16
+技能类型,6,SKILL_TYPE_PET_ACTIVE,宠物主动技能,src/include/skill.hrl:17
+技能类型,7,SKILL_TYPE_PET_PASSIVE,宠物被动技能,src/include/skill.hrl:18
+旧装备品质（equip.hrl）,0,EQUIP_QUALITY_WHITE,白色,src/include/equip.hrl:16
+旧装备品质（equip.hrl）,1,EQUIP_QUALITY_GREEN,绿色,src/include/equip.hrl:17
+旧装备品质（equip.hrl）,2,EQUIP_QUALITY_BLUE,蓝色,src/include/equip.hrl:18
+旧装备品质（equip.hrl）,3,EQUIP_QUALITY_PURPLE,紫色,src/include/equip.hrl:19
+旧装备品质（equip.hrl）,4,EQUIP_QUALITY_ORANGE,橙色,src/include/equip.hrl:20
+物品大类,1,ITEM_CLASS_CUR,货币材料 1000~2000,src/include/item.hrl:103
+物品大类,2,ITEM_CLASS_WEAPON,武器,src/include/item.hrl:104
+物品大类,3,ITEM_CLASS_SUB_WEAPON,副武器,src/include/item.hrl:105
+物品大类,4,ITEM_CLASS_ARMOR,防具,src/include/item.hrl:106
+物品类型,1,ITEM_TYPE_EXP,技能物品类型,src/include/item.hrl:112
+物品类型,101,ITEM_TYPE_WEAPON,武器,src/include/item.hrl:119
+物品类型,102,ITEM_TYPE_SUB_WEAPON,副武器,src/include/item.hrl:120
+物品类型,104,ITEM_TYPE_HAT,头部,src/include/item.hrl:122
+物品类型,105,ITEM_TYPE_CLOAK,披风,src/include/item.hrl:123
+物品类型,106,ITEM_TYPE_CLOTHES,胸部,src/include/item.hrl:124
+物品类型,107,ITEM_TYPE_SHOE,脚,src/include/item.hrl:125
+物品类型,108,ITEM_TYPE_RING,戒指,src/include/item.hrl:126
+物品类型,109,ITEM_TYPE_NECKLACE,项链,src/include/item.hrl:127
+物品类型,110,ITEM_TYPE_SKILL,技能物品类型,src/include/item.hrl:113
+物品类型,111,ITEM_TYPE_PET,宠物物品类型,src/include/item.hrl:114
+物品类型,1055,ITEM_TYPE_PACKAGE,物品包,src/include/item.hrl:130
+物品类型,1056,ITEM_TYPE_PACKAGE_CHOOSE,自选物品包,src/include/item.hrl:131
+物品品质,1,QUALITY_WHITE,白(灰) 凡品,src/include/item.hrl:93
+物品品质,2,QUALITY_BLUE,蓝 精良,src/include/item.hrl:94
+物品品质,3,QUALITY_PURPLE,紫 稀世,src/include/item.hrl:95
+物品品质,4,QUALITY_ORANGE,橙 传说,src/include/item.hrl:96
+物品品质,5,QUALITY_YELLOW,黄 神铸,src/include/item.hrl:97
+物品品质,6,QUALITY_RED,红 不朽,src/include/item.hrl:98
+物品品质,7,QUALITY_COLOR,彩 虹彩,src/include/item.hrl:99
+物品位置,1,ITEM_LOCATION_BAG,背包,src/include/item.hrl:81
+物品位置,2,ITEM_LOCATION_BODY,角色,src/include/item.hrl:82
+装备槽位,1,EQUIP_SLOT_WEAPON1,主武器,src/include/item.hrl:68
+装备槽位,2,EQUIP_SLOT_WEAPON2,副武器1,src/include/item.hrl:69
+装备槽位,3,EQUIP_SLOT_WEAPON3,副武器2,src/include/item.hrl:70
+装备槽位,4,EQUIP_SLOT_HAT,头部,src/include/item.hrl:71
+装备槽位,5,EQUIP_SLOT_CLOAK,披风,src/include/item.hrl:72
+装备槽位,6,EQUIP_SLOT_CLOTHES,胸部,src/include/item.hrl:73
+装备槽位,7,EQUIP_SLOT_SHOE,脚,src/include/item.hrl:74
+装备槽位,8,EQUIP_SLOT_RING,戒指,src/include/item.hrl:75
+装备槽位,9,EQUIP_SLOT_NECKLACE,项链,src/include/item.hrl:76
