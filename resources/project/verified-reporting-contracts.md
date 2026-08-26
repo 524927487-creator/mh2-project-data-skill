@@ -67,5 +67,5 @@ This section applies to the verified, per-`dungeon_id` small-dungeon progression
 - `success_rate` (当前关成功率) = `success_count / challenge_count`.
 - `next_enter_roles` (下一实际输出关卡进入角色数): count distinct `#account_id` in `dungeon_enter` for the next actual output level. It is not a strict immediate-next-level relation from game configuration.
 - `success_to_next_rate` (成功到下一关进入率) = `next_enter_roles / success_role_count`. Its meaning is the share of successful roles observed entering the next actual output level; do not label it as a strict configured-next-level conversion rate.
-- For the final actual output level, `next_enter_roles`, the derived residency field, and `success_to_next_rate` are blank. Do not substitute zero.
-- Map displayed levels with `dungeon_type:dungeon_id`. When an unlock relation exists, look it up independently in `small_dungeon_unlock.csv` and preserve its conditional, non-causal meaning.
+- For the final actual output level, `next_enter_roles` and `success_to_next_rate` are blank. Its derived residency uses its own entry-role count and cumulative share as the endpoint so the displayed per-level residency shares sum to 100%; do not substitute zero.
+- Map displayed levels with `dungeon_type:dungeon_id`. For Stage1's `关卡中文名`, first use the matched `small_dungeon_unlock.csv` `关卡` value and only then fall back to the static formal `dungeon_id.csv` display name. When an unlock relation exists, preserve its conditional, non-causal meaning.
