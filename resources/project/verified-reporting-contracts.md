@@ -1,6 +1,6 @@
 # MH2 已验证报表口径
 
-此文件是本机 MH2 Skill 对数据组基础资源的已验证补充。默认口径与本文件冲突时，以本文件为准；用户明确指定且有业务依据的口径除外。
+此文件是 MH2 数据组基础资源的已验证补充。默认口径与本文件冲突时，以本文件为准；用户明确指定且有业务依据的口径除外。
 
 ## 默认指标和身份
 
@@ -11,13 +11,13 @@
 
 ## 已验证 `groupBy` 规则
 
-| 业务分组 | `groupBy` key / 字段 | `tableType` / 来源 | 已验证请求证据 |
+| 业务分组 | `groupBy` key / 字段 | `tableType` / 来源 | 验证状态 |
 | --- | --- | --- | --- |
-| 职业 | `career` | `user` | `F:\Projects\data-analysis-agent\runtime\mh2_retention_report\20260825_130113\requests\final_profession.json` (`/open/retention-analyze`, HTTP 200, `return_code=0`) |
-| 渠道 | `channel` | `user` | `F:\Projects\data-analysis-agent\runtime\mh2_retention_report\20260825_130113\requests\final_channel.json` (`/open/retention-analyze`, HTTP 200, `return_code=0`) |
-| 勇1老用户 | `cohort_20260824_202104` | `user_cluster` / `cluster_by_import` | `F:\Projects\data-analysis-agent\runtime\mh2_retention_report\20260825_130113\requests\final_old_new.json` (`/open/retention-analyze`, HTTP 200, `return_code=0`) |
-| D1 小秘境章节 | `tag_20260824_1` | `user_cluster` / `tag_by_dynamic_condition` | `F:\Projects\data-analysis-agent\runtime\mh2_retention_report\20260825_130113\requests\final_small_chapter_retention.json` (`/open/retention-analyze`, HTTP 200, `return_code=0`) |
-| D0 小秘境 | `tag_20260824_1` | `user_cluster` / `tag_by_dynamic_condition` | `F:\Projects\data-analysis-agent\runtime\mh2_retention_report\20260825_130113\requests\final_small_chapter_retention.json` (`/open/retention-analyze`, HTTP 200, `return_code=0`) |
+| 职业 | `career` | `user` | controlled API request verified |
+| 渠道 | `channel` | `user` | controlled API request verified |
+| 勇1老用户 | `cohort_20260824_202104` | `user_cluster` / `cluster_by_import` | controlled API request verified |
+| D1 小秘境章节 | `tag_20260824_1` | `user_cluster` / `tag_by_dynamic_condition` | controlled API request verified |
+| D0 小秘境 | `tag_20260824_1` | `user_cluster` / `tag_by_dynamic_condition` | controlled API request verified |
 
 - D0 小秘境分层只使用上述动态标签。对于 cohort 日期 `D`，在 `D+1` 的 01:00 标签更新后，使用该标签的 `specifiedClusterDate=D+1`。
 - 历史 D0 进度分布查询：`dungeon`、`dungeon_type=1`、`dungeon_result=1`、`MAX(dungeon_id)`。它不是 D0 小秘境用户分层，不替代动态标签，也不得作为此业务名称的 `groupBy` 来源。
@@ -25,8 +25,8 @@
 ## 执行与返回
 
 - 职业使用 `career`，勇1老用户使用 `cohort_20260824_202104`，D0 小秘境使用 `tag_20260824_1`；这些是新分层留存的正式分层定义。
-- 新分层留存直接复用 `F:\Projects\data-analysis-agent\src\mh2_retention_config.py` 的既有分组 builder、`retention_request` 与共享 `retention_analyze` 逐项执行。Stage1 仅是 Golden/历史案例，不是新查询的默认入口；只发用户要求的请求，不得调用完整 `run_mh2_retention_report`，也不得附带 D0 进度分布或实时查询。
-- 用户要求实际“查”分层留存时，必须在当前会话调用真实只读 API。旧 runtime、Golden 和报告只能作历史证据，不得替代当前查询。保留本次请求、原始返回与标准化结果；本次只请求职业、勇1老用户、D0 小秘境时，必须恰好发出三份 `retention_analyze` 请求。
+- 新分层留存按本节的 `groupBy` 定义和 `template-retention-analyze.md` 生成请求。Stage1 仅是历史口径案例，不是新查询的默认入口；只发用户要求的请求，不得附带 D0 进度分布或实时查询。
+- 用户要求实际“查”分层留存时，只有在当前会话存在用户配置的兼容只读 API 时才执行。保留本次请求、原始返回与标准化结果；本次只请求职业、勇1老用户、D0 小秘境时，必须恰好发出三份 `retention-analyze` 请求。未配置实时 API 时交付三份请求体，并标记 `EVIDENCE_REQUIRED`；旧 runtime、Golden 和报告不能替代当前查询。
 - 实时 ThinkingData 查询只有 `return_code=0` 才算业务成功；HTTP 200 只表示请求到达服务，不能单独作为成功依据。
 - 成功答复只给日期、指标、数值和业务定义，不展示 HTTP 状态等诊断信息。
 - 失败答复必须给出 `return_code` 和 `return_message`，并说明未取得业务结果。

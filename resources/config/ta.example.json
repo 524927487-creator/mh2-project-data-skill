@@ -1,6 +1,6 @@
 {
-  "apiUrl": "http://175.178.115.119:8992",
-  "userToken": "用户TOKEN",
+  "apiUrl": "https://YOUR_THINKINGDATA_API_HOST",
+  "userToken": "TA_USER_TOKEN",
   "outputDir": "output",
-  "outputPrefix": "query-result"
+  "outputPrefix": "mh2-query-result"
 }
