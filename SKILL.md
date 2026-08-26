@@ -10,8 +10,8 @@ description: Use this skill when the user wants to query or generate ThinkingDat
 Use this skill to turn natural-language MH2 analysis questions into executable ThinkingData SQL, model-analysis JSON request bodies, or task Markdown files.
 
 1. Identify the requested analysis type: SQL, event analysis, retention, funnel, distribution, path, interval, attribute, or event-user-list drilldown.
-2. Read `resources/project/verified-reporting-contracts.md` for locally verified MH2 defaults and response rules, then resolve the remaining metric口径 from the current user request and bundled resources.
-3. When the user asks for MH2 "首日分析", Stage1, 小秘境推进, or 小秘境驻留, read `resources/project/stage1-retention-report.md` and the "Stage1 小秘境关卡推进指标" section of `resources/project/verified-reporting-contracts.md` before selecting requests. A user-only "首日分析" must combine the existing Stage1 retention/final-progress results with the required per-`dungeon_id` small-dungeon progression chain; final-progress distribution alone is incomplete. This is a data-query request, not authorization to change code: use the existing shared Tool or a direct read-only request shape from the contract and derive the required report fields in the current session. These resources define the existing Stage1 chain; do not create a second Stage1 query framework.
+2. Read `resources/project/verified-reporting-contracts.md` for verified MH2 defaults and response rules, then resolve the remaining metric口径 from the current user request and bundled resources.
+3. When the user asks for MH2 "首日分析", Stage1, 小秘境推进, or 小秘境驻留, read `resources/project/stage1-retention-report.md` and the "Stage1 小秘境关卡推进指标" section of `resources/project/verified-reporting-contracts.md` before selecting requests. A user-only "首日分析" must combine retention/final-progress results with the required per-`dungeon_id` small-dungeon progression chain; final-progress distribution alone is incomplete. Use a compatible configured ThinkingData connector for read-only requests, or generate the complete SQL/model-request plan when no connector is available. Do not claim a generated plan is a live report, and do not assume any private runner or Tool exists.
 4. Look up exact event names, property names, and enum meanings in `resources/project/mh2-events.md`.
 5. Search `resources/project/mh2-event-index.csv` and `resources/project/mh2-event-properties.csv` when the event or property name needs exact spelling.
 6. Search `resources/project/mh2-mapping-tables.md` and `resources/project/mapping_exports/` when an event property contains server-side IDs such as dungeon, item, career, skill, equipment, pet, reason, or sub_reason.
@@ -24,8 +24,8 @@ Use this skill to turn natural-language MH2 analysis questions into executable T
 - `resources/project/mh2-event-index.csv`: compact event index with event name, display name, tag, description, and property count.
 - `resources/project/mh2-event-properties.csv`: flat event-property index for exact property lookup.
 - `resources/project/mh2-mapping-tables.md`: static server-side mapping catalog plus registered, separate small-dungeon binding/unlock mapping resources; it identifies each mapping domain and its join key.
-- `resources/project/verified-reporting-contracts.md`: locally verified MH2 reporting defaults, live-query result rules, and Stage1 small-dungeon progression metrics. Read this before selecting a default identity, metric, or user-facing response format.
-- `resources/project/stage1-retention-report.md`: the current deployed Stage1 report and OpenClaw Tool contract. Read it only for that existing report/Tool; it adds report-specific rules without changing the generic identity.
+- `resources/project/verified-reporting-contracts.md`: verified MH2 reporting defaults, live-query result rules, and Stage1 small-dungeon progression metrics. Read this before selecting a default identity, metric, or user-facing response format.
+- `resources/project/stage1-retention-report.md`: portable Stage1 analytical contract. It defines the required inputs, calculations, and evidence rules, but does not include a private production runner or OpenClaw Tool.
 - `resources/project/tracking-dictionary-reproduction.md`: scope and limitations of reproducing the core event/field set from the raw tracking workbook.
 - `scripts/build_tracking_dictionary.py`: regenerate a readable event/field dictionary from `resources/project/raw/代号：MH2_埋点方案_20260821.xlsx`; it does not generate mapping tables or templates.
 - `resources/project/mapping_exports/`: CSV exports of each mapping workbook sheet for offline lookup.
@@ -99,6 +99,8 @@ path-analyze                POST /open/path-analyze?token=<TA_USER_TOKEN>
 interval-analyze            POST /open/interval-analyze?token=<TA_USER_TOKEN>
 attribute-analyze           POST /open/attribute-analyze?token=<TA_USER_TOKEN>
 ```
+
+Live execution is optional. Use it only when the installing user has intentionally supplied a compatible endpoint and token. Never look for a drive-specific project directory, a private Tool, cached production output, or a historical report as a substitute for that configuration.
 
 ## Missing Information Rules
 
