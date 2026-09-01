@@ -1,6 +1,6 @@
 # MH2 Stage1 Retention Report Contract
 
-This resource defines the existing Stage1 report contract for an environment-provided Stage1 Runner or the OpenClaw `analysis_mh2_retention` Tool. It is not a replacement for generic MH2 defaults, and it does not ship an executable Runner.
+This resource applies only to the existing Stage1 report at `F:\Projects\data-analysis-agent\scripts\run_mh2_retention_report.py` and the OpenClaw `analysis_mh2_retention` Tool. It is not a replacement for generic MH2 defaults.
 
 ## Current Deployed Contract
 
@@ -14,16 +14,27 @@ The generic Skill default and the current Stage1 implementation both use `#accou
 
 ## D0 And Realtime Rules
 
-- Small dungeon: `dungeon`, `dungeon_result=1`, `dungeon_type=1`, user-day maximum final progress. Chapter D1 uses dynamic tag `tag_20260824_1` after the next-day 01:00 snapshot.
+- Small dungeon chapter and final-stage distributions: `dungeon`, `dungeon_type=1`, user-day maximum final progress, without a `dungeon_result` filter. Chapter D1 uses dynamic tag `tag_20260824_1` after the next-day 01:00 snapshot.
 - Large dungeon: use the accepted Stage1 `dungeon_type=2` distribution result and render its numeric progress in 10-level buckets.
 - Realtime D1 points: 08:00, 09:00, 10:00, 12:00, 14:00, 16:00, 18:00, 20:00, 22:00, and 24:00. Compare only the preceding cohort at the same time point.
 
 ## Stage1 2.4 小秘境全量关卡分布
 
-This is the required per-level progression table in the Stage1 Markdown. It is separate from the final-success chapter and Top10 distributions.
+This is the required per-level progression table in the Stage1 Markdown. It is separate from the final-progress chapter and Top10 distributions.
 
-- Fixed execution boundary: invoke the Stage1 Runner or `analysis_mh2_retention` Tool available in the current environment with the requested cohort date and Shanghai `as_of` time. Do not search for a historical local code path or drive. If neither execution capability is available, return `EVIDENCE_REQUIRED` rather than fabricating a partial report.
-- Fixed source contract: use the Runner/Tool's contracted per-level source, parameterized only by `${cohort_date}`. Do not create an ad hoc SQL/API request or a parallel query implementation.
+### Named Full-Analysis Intent
+
+`看小秘境数据`、`看看小秘境数据` and `看一下 [日期] 小秘境数据`
+are `QUERY_INTENT=SMALL_DUNGEON_FULL_ANALYSIS`. They directly select this
+existing complete small-dungeon template: the full per-level distribution and
+the required B-line production chain below. Do not ask the user to choose
+progression, success, residency, or stop metrics, do not return only Dungeon
+event counts, and do not create a standalone small-dungeon runner. The fixed
+Stage1 entry remains the only execution path, with all of its documented
+fixed sections and evidence requirements.
+
+- Fixed report entry: `F:\Projects\data-analysis-agent\scripts\run_mh2_retention_report.py --stage1-cohort <cohort_date>`.
+- Fixed source contract: `F:\Projects\data-analysis-agent\contracts\mh2_retention_report\small_dungeon_full_distribution.sql`. Only replace `${cohort_date}`; do not create an ad hoc SQL/API request or a parallel query implementation.
 - Scope: the same D0 `role_create_success` cohort, `#account_id`, and `dungeon_type=1` throughout. The source must return the cohort-wide `small_dungeon_participant_count` with every level row.
 - Report location: `### 2.4 小秘境全量关卡分布`, after `2.3` and before `## 3. 小秘境 Top10 下钻`.
 - Required source/derived fields: formal level name, unlock-content summary, entry roles, challenge count, successful roles, success count, next actual output level entry roles, residency roles, residency share of small-dungeon participants, success rate, success-to-next-entry rate, defeat count, normal-exit count, abnormal-exit count. The Stage1 Markdown presentation is `关卡中文名`, `关联解锁内容`, `累计到达比例`, and `本关驻留率`; do not omit the unlock-content column.
@@ -36,6 +47,13 @@ This is the required per-level progression table in the Stage1 Markdown. It is s
 
 Use the existing shared ThinkingData Tool. Native retention and distribution requests do not fall back to `querySql`; the realtime D1 SQL is the existing approved exception. A private test send requires caller authorization.
 
+## `hero1_new` Native Gate
+
+- `scripts\run_mh2_retention_report.py --stage1-cohort <cohort_date> --population hero1_new` is a partial, fail-closed report mode. It does not make the complete Stage1 production contract applicable.
+- Its only `READY` sources are channel x cluster creation, overall D1 cluster split, profession D1 `groupBy=[career, cohort_20260824_202104]`, channel D1 `groupBy=[channel, cohort_20260824_202104]`, G2.3 `groupBy=[dungeon_type@dungeon_name, cohort_20260824_202104]`, and D0 final-stage distribution `quota=dungeon_id + groupBy=[cohort_20260824_202104]` without a `dungeon_result` filter. Extract pure-new data only from the `不属于 勇1老用户` row of the appended cluster dimension.
+- The D0 distribution is only each creator's highest small-dungeon stage on that day, regardless of settlement result. Online remains `EVIDENCE_REQUIRED`; G2.2 is `NOT_APPLICABLE`; 2.4 and B-line/SQL are `EVIDENCE_REQUIRED`. The CLI must report `REPORT_STATUS=EVIDENCE_REQUIRED` until those independent contracts have real native evidence.
+- The report must render the `specifiedClusterDate` actually used by the cluster group. The 2026-08-27 five-source witness is `C:\Users\10633\Documents\Codex\2026-08-26\mh2-pure-new-segment-diagnosis\work\hero1_new_model_groupby_witness\20260827_094920`.
+
 ## Stage1 B-Line Production Chain
 
 - Status: `READY + REQUIRED`. B-line is not an optional capability for a complete Stage1 run.
@@ -46,7 +64,11 @@ Use the existing shared ThinkingData Tool. Native retention and distribution req
 
 ## Production Contract
 
-When the user asks for a complete MH2 Stage1 / first-day report, invoke the single Stage1 Runner/Tool available in the current environment rather than assembling a second report chain. This public Skill does not require, locate, or assume any particular local drive or repository path.
+When the user asks for a complete MH2 Stage1 / first-day report, run the single fixed entry rather than assembling a second report chain:
+
+```text
+F:\Projects\data-analysis-agent\scripts\run_mh2_retention_report.py --stage1-cohort <cohort_date> --as-of <Shanghai local time>
+```
 
 - The report is for that one `role_create_success` creator cohort only. It must include the fixed Stage1 sections: creation, channel x Hero1 old/new creation split, creator-cohort online overview, D1 overall/profession/old-new/channel, G2.2 activation funnel, G2.3 same-day creator gameplay, small-dungeon chapter residency, and the full per-level small-dungeon distribution.
 - The complete Stage1 report also requires the B-line production chain above: execute it for every run and preserve the full B-line evidence. The user-facing Markdown may render only a selected/TopN small-dungeon drilldown summary after the all-level table; it must not be treated as the complete B-line evidence.

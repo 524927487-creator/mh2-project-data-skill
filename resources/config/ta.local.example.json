@@ -2,5 +2,5 @@
   "apiUrl": "https://YOUR_THINKINGDATA_API_HOST",
   "userToken": "TA_USER_TOKEN",
   "outputDir": "output",
-  "outputPrefix": "mh2-query-result"
+  "outputPrefix": "shanhai"
 }

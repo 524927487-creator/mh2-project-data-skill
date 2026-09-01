@@ -1,4 +1,3 @@
-interface:
-  display_name: "MH2 数据查询"
-  short_description: "生成 MH2 项目的数数 SQL、留存漏斗与模型分析请求"
-  default_prompt: "Use $mh2-project-data-skill to generate an MH2 data query or analysis request."
+display_name: MH2 数据查询
+short_description: 生成 MH2 ThinkingData SQL 和模型分析请求
+default_prompt: 帮我用 MH2 数据生成一个查询或分析请求
